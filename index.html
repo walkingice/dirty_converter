@@ -7,12 +7,30 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            font-size: 1.2rem;
             margin: 20px;
         }
+        input {
+            font-size: 1.2rem;
+        }
+        select {
+            font-size: 1.2rem;
+        }
+        div {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
         .container {
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
         }
+        .adult-label, .adult-count {
+            color: darkgreen;
+        }
+        .child-label, .child-count {
+            color: purple;
+        }
+
         .input-group, .family-row {
             display: flex;
             flex-wrap: wrap;
@@ -22,20 +40,46 @@
         .input-group label, .family-row label {
             margin-right: 10px;
         }
+        .delete-row {
+            color: darkred;
+        }
         .input-group input, .input-group select, .family-row select {
             margin-right: 20px;
             flex: 1;
-            min-width: 100px;
+            min-width: 40px;
         }
         .family-row button {
             margin-right: 20px;
         }
+        .family-row {
+            margin: 0 auto;
+            padding: 20px 10px;
+        }
+        .family-row:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+
+        .family-row:nth-child(even) {
+            background-color: #ffffff;
+        }
+
         .amount {
             flex: 1;
             min-width: 50px;
         }
         #add-family {
+            flex: 1;
+            width: 70%;
+            font-size: 1.2rem;
             margin-top: 20px;
+            margin-bottom: 30px;
+            background-color: green;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
         }
     </style>
 </head>
@@ -64,7 +108,7 @@
         <div id="main_content">
             <div class="family-row">
                 <button class="delete-row">刪除</button>
-                <label>大人數量:</label>
+                <label class="adult-label">大人數量:</label>
                 <select class="adult-count">
                     <option value="1">1</option>
                     <option value="2" selected>2</option>
@@ -73,7 +117,7 @@
                     <option value="5">5</option>
                     <option value="6">6</option>
                 </select>
-                <label>小孩數量:</label>
+                <label class="child-label">小孩數量:</label>
                 <select class="child-count">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -87,7 +131,7 @@
             </div>
             <div class="family-row">
                 <button class="delete-row">刪除</button>
-                <label>大人數量:</label>
+                <label class="adult-label">大人數量:</label>
                 <select class="adult-count">
                     <option value="1">1</option>
                     <option value="2" selected>2</option>
@@ -96,7 +140,7 @@
                     <option value="5">5</option>
                     <option value="6">6</option>
                 </select>
-                <label>小孩數量:</label>
+                <label class="child-label">小孩數量:</label>
                 <select class="child-count">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -159,7 +203,7 @@
             newRow.className = 'family-row';
             newRow.innerHTML = `
                 <button class="delete-row">刪除</button>
-                <label>大人數量:</label>
+                <label class="adult-label">大人數量:</label>
                 <select class="adult-count">
                     <option value="1">1</option>
                     <option value="2" selected>2</option>
@@ -168,7 +212,7 @@
                     <option value="5">5</option>
                     <option value="6">6</option>
                 </select>
-                <label>小孩數量:</label>
+                <label class="child-label">小孩數量:</label>
                 <select class="child-count">
                     <option value="1">1</option>
                     <option value="2">2</option>
